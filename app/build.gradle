@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.nec.baas.ssepush"
+        minSdkVersion 24
+        targetSdkVersion 27
+        versionCode 1
+        versionName "7.5.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+        exclude 'LICENSE'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.nec.baas:baas-client-android:7.5.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.4'
+
+    implementation ('org.glassfish.jersey.core:jersey-client:2.22.4') {
+        exclude group: 'javax.inject', module: 'javax.inject'
+    }
+    implementation ('org.glassfish.jersey.media:jersey-media-sse:2.22.4') {
+        exclude module: 'jersey-server'
+    }
+}

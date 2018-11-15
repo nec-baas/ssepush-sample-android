@@ -1,0 +1,10 @@
+*~
+*.bak
+*.iml
+local.properties
+
+.gradle/
+.idea/
+build/
+
+Config.java

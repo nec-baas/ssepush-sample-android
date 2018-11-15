@@ -7,7 +7,7 @@ Android SDK SSE Push機能の、インスタレーション登録と SSE Push �
 実行方法
 ---------
 
-Config.java 内の TENANT_ID, APP_ID, APP_KEY, ENDPOINT_URI を設定してください。
+Config.java.sample を Config.java にリネームし、Config.java 内の TENANT_ID, APP_ID, APP_KEY, ENDPOINT_URI を設定してください。
 
 Android Studio で本ディレクトリをロードし、ビルド・実行を行ってください。
 
